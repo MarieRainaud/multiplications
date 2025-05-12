@@ -6,6 +6,7 @@ let bonneReponseCount = 0;
 let totalQuestions = 0;
 let maxQuestions = 20;
 let verrouillage = false;
+let enCours = false;
 
 // Récupérer les tables sélectionnées
 function getTablesSelectionnees() {
@@ -20,6 +21,7 @@ function getTablesSelectionnees() {
 // Choisir le mode
 function choisirMode(mode) {
     modeActuel = mode;
+    enCours = true;
     bonneReponseCount = 0;
     totalQuestions = 0;
 
@@ -27,21 +29,24 @@ function choisirMode(mode) {
     if (mode === 'controle') {
         document.getElementById('compteur').style.display = 'block';
     }
-
     // Si aucune table n'est sélectionnée, on affiche une alerte
     getTablesSelectionnees();
     if (tablesSelectionnees.length === 0) {
         alert('Tu dois sélectionner au moins une table !');
         return;
     }
-
     poserQuestion();
 }
 
 // Poser la question
 function poserQuestion() {
 
-    //Stopper ici en mode ontrôle si on a atteint le nombre de questions
+    // Stopper ici si on est revenu sur la page de sélection des tables
+    if (!enCours) {
+        return;
+    }
+
+    //Stopper ici en mode contrôle si on a atteint le nombre de questions
     if (modeActuel === 'controle' && totalQuestions >= maxQuestions) {
         afficherFinControle();
         return;
@@ -59,8 +64,8 @@ function poserQuestion() {
     // Afficher la question et le bouton "Revenir à la sélection"
     document.getElementById('tables-selection').style.display = 'none';
     document.getElementById('questionDiv').style.display = 'block';
-    document.getElementById('revenir-selection-container').style.display = 'block';
     document.getElementById('resultatFinalDiv').style.display = 'none';
+    document.getElementById('revenir-selection-container').style.display = 'block';
     document.getElementById('question').textContent = `Combien font ${num1} x ${num2} ?`;
 }
 // Vérifier la réponse
@@ -113,10 +118,10 @@ function verifierReponse() {
 }
 
 function afficherFinControle() {
+    document.getElementById('tables-selection').style.display = 'none';
     document.getElementById('questionDiv').style.display = 'none';
     document.getElementById('resultatFinalDiv').style.display = 'block';
     document.getElementById('revenir-selection-container').style.display = 'block';
-    document.getElementById('compteur').style.display = 'none';
     let resultatFinal = document.getElementById('resultatFinal');
 
     // Message final selon la note obtenue
@@ -136,7 +141,7 @@ function afficherFinControle() {
     }
 
     resultatFinal.innerHTML = `Contrôle terminé !<br>Tu as eu ${bonneReponseCount} bonnes réponses sur ${totalQuestions}.<br>${messageFinal}`;
-
+    document.getElementById('compteur').textContent = '';
 }
 
 // Ecouteur d'évenément sur la touche entrée
@@ -148,6 +153,8 @@ document.getElementById('reponse').addEventListener('keydown', function (event) 
 
 // Revenir à la page de sélection des tables
 function revenirSelection() {
+    // Empêcher de lancer une autre question quand on a cliqué sur le bouton
+    enCours = false;
 
     // Cacher la page de la question et afficher la page de sélection
     document.getElementById('tables-selection').style.display = 'block';

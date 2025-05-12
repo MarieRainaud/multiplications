@@ -32,7 +32,22 @@ button {
 
 #tables-selection {
     margin: 20px;
-    max-width: 670px;
+}
+
+.checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(4, 20px 80px);
+    grid-gap: 20px;
+    min-width: 400px;
+    justify-items: start;
+    width: 100%;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .checkbox-container {
+        grid-template-columns: repeat(2, 20px 100px);
+    }
 }
 
 .resultat-bon {

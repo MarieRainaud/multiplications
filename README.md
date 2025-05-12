@@ -87,8 +87,13 @@ Annexe : meta pour téléphone
 - Remise à zéro du compteur de bonnes réponses
 
 Annexe :
-Résolution mauvaise réponse en cas de champ de saisie vide
-Résolution appuis successifs sur le bouton Vérifier
+- Résolution mauvaise réponse en cas de champ de saisie vide
+- Résolution appuis successifs sur le bouton Vérifier
+
+#### Version 5
+- Résolution du problème d'affichage du compteur
+- Meileure présentation grâce à Grid, notamment sur mobile
+- Résolution du problème avec le setTimeout de verifierReponse() qui relançait une question si on avait cliqué sur le bouton de retour à la sélection des tables avant la fin du délai
 
 #### Projets à venir
 - Choix du nombre de questions
