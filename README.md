@@ -91,6 +91,7 @@ Résolution mauvaise réponse en cas de champ de saisie vide
 Résolution appuis successifs sur le bouton Vérifier
 
 #### Projets à venir
+- Affichage sur mobile (cases à cocher pas sur la même ligne que le nom de la table)
 - Choix du nombre de questions
 - Chronomètre et choix de la durée du chronomètre
 - Accessibilité
