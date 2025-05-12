@@ -1,0 +1,33 @@
+body {
+    font-family: 'Times New Roman';
+    text-align: center;
+    margin: 20px;
+}
+
+input {
+    margin-left: 20px;
+}
+
+button {
+    padding: 10px;
+    margin: 20px;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tables-selection {
+    margin-bottom: 20px;
+}
+
+.resultat-bon {
+    color: green;
+    font-weight: bold;
+}
+
+.resultat-mauvais {
+    color: red;
+    font-weight: bold;
+}

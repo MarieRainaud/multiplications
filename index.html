@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu des Tables de Multiplication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Révise tes tables de multiplication !</h1>
+
+    <!-- Sélection des tables de multiplication à réviser -->
+    <div class="tables-selection">
+        <h2>Choisis les tables à réviser :</h2>
+        <div>
+            <input type="checkbox" id="table1" value="1"> Table de 1
+            <input type="checkbox" id="table2" value="2"> Table de 2
+            <input type="checkbox" id="table3" value="3"> Table de 3
+            <input type="checkbox" id="table4" value="4"> Table de 4
+            <input type="checkbox" id="table5" value="5"> Table de 5
+            <input type="checkbox" id="table6" value="6"> Table de 6
+            <input type="checkbox" id="table7" value="7"> Table de 7
+            <input type="checkbox" id="table8" value="8"> Table de 8
+            <input type="checkbox" id="table9" value="9"> Table de 9
+            <input type="checkbox" id="table10" value="10"> Table de 10
+            <input type="checkbox" id="table11" value="11"> Table de 11
+        </div>
+        <button onclick="poserQuestion()">Commencer</button>
+    </div>
+
+    <!-- Affichage de la question -->
+    <div id="questionDiv" style="display:none;">
+        <p class="question" id="question"></p>
+        <input type="number" id="reponse" placeholder="Ta réponse">
+        <button onclick="verifierReponse()">Vérifier</button>
+    </div>
+
+    <!-- Affichage du résultat -->
+    <p id="resultat"></p>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
