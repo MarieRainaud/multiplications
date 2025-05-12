@@ -21,8 +21,9 @@ function poserQuestion() {
         alert('Tu dois sélectionner au moins une table !');
         return;
     }
-    // Réinitialiser le message de résultat
+    // Réinitialiser le message de résultat et effacer le champ de saisie
     document.getElementById('resultat').textContent = '';
+    document.getElementById('reponse').value = '';
 
     //Définir les nombres à multiplier
     tablesEnCours = tablesSelectionnees[Math.floor(Math.random() * tablesSelectionnees.length)]; 
@@ -35,19 +36,26 @@ function poserQuestion() {
     document.getElementById('question').textContent = `Combien font ${num1} x ${num2} ?`;
 }
 
-// Vérifier la réponse
+// Vérifier la réponse, si elle est fausse, recommencer
 function verifierReponse() {
     const bonneReponse = num1 * num2;
     const reponseUtilisateur = parseInt(document.getElementById('reponse').value); 
 
     const resultatElement = document.getElementById('resultat');
+    resultatElement.classList.remove('resultat-bon', 'resultat-mauvais');
     if (reponseUtilisateur === bonneReponse) {
         resultatElement.textContent = 'Bonne réponse !';
         resultatElement.classList.add('resultat-bon');
+        setTimeout(poserQuestion, 2000);
     } else {
-        resultatElement.textContent = `Mauvaise réponse. Essaye encore !.`;
+        resultatElement.textContent = `Mauvaise réponse. Essaye encore !`;
         resultatElement.classList.add('resultat-mauvais');
     }
-    // Attendre un peu puis poser une nouvelle question
-    setTimeout(poserQuestion, 2000); 
+
+// Ecouteur d'évenément sur la touche entrée
+document.getElementById('reponse').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        verifierReponse();
+    }
+})
 }
