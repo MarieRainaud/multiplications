@@ -12,8 +12,9 @@
     <h1>Révise tes tables de multiplication !</h1>
 
     <!-- Sélection des tables de multiplication à réviser -->
-    <div class="tables-selection">
+    <div id="tables-selection">
         <h2>Choisis les tables à réviser :</h2>
+        <br>
         <div>
             <input type="checkbox" id="table1" value="1"> Table de 1
             <input type="checkbox" id="table2" value="2"> Table de 2
@@ -27,7 +28,9 @@
             <input type="checkbox" id="table10" value="10"> Table de 10
             <input type="checkbox" id="table11" value="11"> Table de 11
         </div>
-        <button onclick="poserQuestion()">Commencer</button>
+        <br>
+        <button onclick="choisirMode('entrainement')">Entraînement</button>
+        <button onclick="choisirMode('controle')">Contrôle</button>
     </div>
 
     <!-- Affichage de la question -->
@@ -35,14 +38,25 @@
         <p class="question" id="question"></p>
         <input type="number" id="reponse" placeholder="Ta réponse">
         <button onclick="verifierReponse()">Vérifier</button>
-    
+
         <!-- Affichage du résultat -->
         <p id="resultat"></p>
 
-        <!-- Bouton revenir à la sélection -->
-        <div class="revenir-selection-container">
-            <button onclick="revenirSelection()" class="revenir-selection">Revenir à la sélection des tables</button>
+        <!-- Compteur de bonnes réponses -->
+        <div id="compteur" style="display: none;">
+            Bonnes réponses : 0 / 0
         </div>
+    </div>
+
+    <!-- Affichage du résultat final en mode contrôle -->
+    <div id="resultatFinalDiv" style="display:none">
+        <p id="resultatFinal"></p>
+    </div>
+    
+    <!-- Bouton revenir à la sélection -->
+    <div id="revenir-selection-container" style="display:none">
+        <button onclick="revenirSelection()" class="revenir-selection">Revenir à la sélection des tables</button>
+    </div>
     </div>
 
     <script src="script.js"></script>

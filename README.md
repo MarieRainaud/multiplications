@@ -40,7 +40,8 @@ Ce jeu permet de réviser les tables de multiplication de 1 à 11. L'utilisateur
 - Sélecteurs CSS de type, d'ID et de classes
 - Mise en page et typographie
 - Box Model : marges, bordures et padding
-- Structure simple et espacement adapté pour garantir une lisibilité optimale sur différentes tailles d'écran.
+- Flexbox
+- Structure simple et espacement adapté pour garantir une lisibilité optimale sur différentes tailles d'écran
 
 #### JavaScript
 - Manipulation du DOM : méthodes pour sélectionner des éléments de la page, modification dynamique du contenu, modification du style d’un élément
@@ -76,3 +77,20 @@ Ce jeu permet de réviser les tables de multiplication de 1 à 11. L'utilisateur
 - Modification du <p> du résultat afin que le bouton ne bouge pas quand le résultat s'affiche
 
 Annexe : meta pour téléphone
+
+#### Version 4 : Mode contrôle
+- Création d'un mode entrainement et un mode contrôle
+- Limitation du nombre d'itérations à 20
+- Mise à jour pour les mauvaises réponses
+- Création d'un compteur de bonnes réponses
+- Création d'un message de fin et de messages selon le résultat final
+- Remise à zéro du compteur de bonnes réponses
+
+Annexe :
+Résolution mauvaise réponse en cas de champ de saisie vide
+Résolution appuis successifs sur le bouton Vérifier
+
+#### Projets à venir
+- Choix du nombre de questions
+- Chronomètre et choix de la durée du chronomètre
+- Accessibilité
