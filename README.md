@@ -53,11 +53,18 @@ Ce jeu permet de réviser les tables de multiplication de 1 à 11. L'utilisateur
 - Gestion des classes dynamiques : classList.add() pour appliquer des classes CSS qui modifient la présentation des résultats
 
 ## Comment jouer ?
-- Sélectionnez les tables de multiplication que vous souhaitez réviser.
-- Cliquez sur le bouton "Commencer" pour démarrer le jeu.
-- Répondez à chaque question de multiplication en entrant votre réponse dans le champ prévu à cet effet.
-- Après chaque réponse, le jeu vous indiquera si votre réponse est correcte ou incorrecte.
-- Le jeu vous posera une nouvelle question après quelques secondes.
+- Sélectionnez les tables de multiplication que vous souhaitez réviser
+- Cliquez sur le bouton "Commencer" pour démarrer le jeu
+- Répondez à chaque question de multiplication en entrant votre réponse dans le champ prévu à cet effet
+- Après chaque réponse, le jeu vous indiquera si votre réponse est correcte ou incorrecte
+- En cas de mauvaise réponse, recommencer jusqu'à trouver la bonne réponse
+- Le jeu vous posera une nouvelle question après quelques secondes
 
 ## Changelog
-#### Initial Commit
+#### Version 1 : Initial Commit
+
+#### Version 2
+- Résolution du bug d'affichage en cas de bonne réponse suivant une mauvaise réponse en retirant les classes CSS
+- Changement en cas de mauvaise réponse, il faut recommencer jusqu'à avoir la bonne réponse
+- Effacement de la réponse précédente dans le champ de saisie
+- Ecouteur d'événement pour la touche Entrée
