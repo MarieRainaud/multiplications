@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu des Tables de Multiplication</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -34,10 +35,15 @@
         <p class="question" id="question"></p>
         <input type="number" id="reponse" placeholder="Ta réponse">
         <button onclick="verifierReponse()">Vérifier</button>
-    </div>
+    
+        <!-- Affichage du résultat -->
+        <p id="resultat"></p>
 
-    <!-- Affichage du résultat -->
-    <p id="resultat"></p>
+        <!-- Bouton revenir à la sélection -->
+        <div class="revenir-selection-container">
+            <button onclick="revenirSelection()" class="revenir-selection">Revenir à la sélection des tables</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

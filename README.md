@@ -68,3 +68,11 @@ Ce jeu permet de réviser les tables de multiplication de 1 à 11. L'utilisateur
 - Changement en cas de mauvaise réponse, il faut recommencer jusqu'à avoir la bonne réponse
 - Effacement de la réponse précédente dans le champ de saisie
 - Ecouteur d'événement pour la touche Entrée
+
+#### Version 3 : Bouton revenir à la sélection des tables
+- Création du bouton revenir à la sélection
+- Positionnement à la fin de la page
+- Effacement sur la page de sélection des tables
+- Modification du <p> du résultat afin que le bouton ne bouge pas quand le résultat s'affiche
+
+Annexe : meta pour téléphone
