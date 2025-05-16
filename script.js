@@ -113,6 +113,8 @@ function verifierReponse() {
                 verrouillage = false;
                 poserQuestion();
             }, 2000);
+        } else {
+            verrouillage = false;
         }
     }
 }
@@ -161,6 +163,7 @@ function revenirSelection() {
     document.getElementById('questionDiv').style.display = 'none';
     document.getElementById('revenir-selection-container').style.display = 'none';
     document.getElementById('resultatFinalDiv').style.display = 'none';
+    document.getElementById('compteur').style.display = 'none';
 
     // Réinitialiser les cases à cocher (décoche toutes les cases)
     for (let i = 1; i <= 11; i++) {

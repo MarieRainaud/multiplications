@@ -95,6 +95,10 @@ Annexe :
 - Meileure présentation grâce à Grid, notamment sur mobile
 - Résolution du problème avec le setTimeout de verifierReponse() qui relançait une question si on avait cliqué sur le bouton de retour à la sélection des tables avant la fin du délai
 
+#### Version 6
+- Résolution du bug lié à l'absence de déverrouillage en mode Entraînement
+- Résolution du bug d'affichage du compteur une fois le mode contrôle quitté
+
 #### Projets à venir
 - Affichage sur mobile (cases à cocher pas sur la même ligne que le nom de la table)
 - Choix du nombre de questions
