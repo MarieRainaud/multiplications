@@ -25,9 +25,10 @@ function choisirMode(mode) {
     bonneReponseCount = 0;
     totalQuestions = 0;
 
-    // Si mode contrôle, afficher le compteur de bonnes réponses
+    // Si mode contrôle, afficher le compteur de bonnes réponses, le réinitialiser
     if (mode === 'controle') {
         document.getElementById('compteur').style.display = 'block';
+        document.getElementById('compteur').textContent = 'Bonnes réponses : 0 / 0';
     }
     // Si aucune table n'est sélectionnée, on affiche une alerte
     getTablesSelectionnees();

@@ -99,6 +99,9 @@ Annexe :
 - Résolution du bug lié à l'absence de déverrouillage en mode Entraînement
 - Résolution du bug d'affichage du compteur une fois le mode contrôle quitté
 
+#### Version 7
+- Remise à zéro du compteur au début du mode contrôle 
+
 #### Projets à venir
 - Affichage sur mobile (cases à cocher pas sur la même ligne que le nom de la table)
 - Choix du nombre de questions
