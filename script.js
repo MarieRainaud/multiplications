@@ -17,6 +17,18 @@ function getTablesSelectionnees() {
         }
     }
 }
+// Tout cocher et tout décocher
+function toutCocher() {
+    for (let i = 1; i <= 11; i++) {
+        document.getElementById(`table${i}`).checked = true;
+    }
+}
+
+function toutDecocher() {
+    for (let i = 1; i <= 11; i++) {
+        document.getElementById(`table${i}`).checked = false;
+    }
+}
 
 // Choisir le mode
 function choisirMode(mode) {
