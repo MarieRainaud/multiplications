@@ -138,24 +138,30 @@ function afficherFinControle() {
     document.getElementById('resultatFinalDiv').style.display = 'block';
     document.getElementById('revenir-selection-container').style.display = 'block';
     let resultatFinal = document.getElementById('resultatFinal');
+    resultatFinal.classList.remove('resultatfinal-bon', 'resultatfinal-moyen', 'resultatfinal-mauvais');
 
     // Message final selon la note obtenue
     let messageFinal;
+    let iconeFinal;
     if (bonneReponseCount === 20) {
         resultatFinal.classList.add('resultatfinal-bon');
         messageFinal = 'Parfait !';
+        iconeFinal = 'fa-trophy';
     } else if (bonneReponseCount >= 15) {
         resultatFinal.classList.add('resultatfinal-bon');
         messageFinal = 'Bravo !';
+        iconeFinal = 'fa-hands-clapping';
     } else if (bonneReponseCount >= 10) {
         messageFinal = 'Il faut réviser encore un peu.';
+        iconeFinal = 'fa-book-open';
         resultatFinal.classList.add('resultatfinal-moyen');
     } else {
         messageFinal = 'Révise encore !';
+        iconeFinal = 'fa-rotate-right';
         resultatFinal.classList.add('resultatfinal-mauvais');
     }
 
-    resultatFinal.innerHTML = `Contrôle terminé !<br>Tu as eu ${bonneReponseCount} bonnes réponses sur ${totalQuestions}.<br>${messageFinal}`;
+    resultatFinal.innerHTML = `<i class="fa-solid ${iconeFinal} icone-resultat" aria-hidden="true"></i>Contrôle terminé !<br>Tu as eu ${bonneReponseCount} bonnes réponses sur ${totalQuestions}.<br>${messageFinal}`;
     document.getElementById('compteur').textContent = '';
 }
 

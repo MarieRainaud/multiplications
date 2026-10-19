@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu des Tables de Multiplication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
 </head>
 
 <body>
-    <h1>Révise tes tables de multiplication !</h1>
+    <h1><i class="fa-solid fa-calculator icone-titre" aria-hidden="true"></i>Révise tes tables de multiplication !</h1>
 
     <!-- Sélection des tables de multiplication à réviser -->
     <div id="tables-selection">
@@ -34,8 +36,16 @@
             <input type="checkbox" id="table11" value="11"> Table de 11
         </div>
         <br>
-        <button onclick="choisirMode('entrainement')">Entraînement</button>
-        <button onclick="choisirMode('controle')">Contrôle</button>
+        <div class="mode-options">
+            <div class="mode-option">
+                <button onclick="choisirMode('entrainement')">Entraînement</button>
+                <p class="mode-description">Prends ton temps et réessaie si tu te trompes</p>
+            </div>
+            <div class="mode-option">
+                <button onclick="choisirMode('controle')">Contrôle</button>
+                <p class="mode-description">20 questions pour voir où tu en es</p>
+            </div>
+        </div>
     </div>
 
     <!-- Affichage de la question -->
@@ -43,6 +53,7 @@
         <p class="question" id="question"></p>
         <input type="number" id="reponse" placeholder="Ta réponse">
         <button onclick="verifierReponse()">Vérifier</button>
+        <p class="aide-saisie">Tu peux aussi appuyer sur Entrée</p>
 
         <!-- Affichage du résultat -->
         <p id="resultat"></p>
@@ -63,6 +74,23 @@
         <button onclick="revenirSelection()" class="revenir-selection">Revenir à la sélection des tables</button>
     </div>
     </div>
+
+    <footer class="site-footer">
+        <a href="./" class="footer-signature">
+            <img class="footer-logo" src="images/logo.svg" alt="" width="88" height="88" loading="lazy" decoding="async">
+            <span>L’atelier de ninette</span>
+        </a>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/marie-rainaud" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-square-linkedin" aria-hidden="true"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/MarieRainaud/multiplications" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

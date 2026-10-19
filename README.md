@@ -19,7 +19,11 @@ Ce jeu permet de réviser les tables de multiplication de 1 à 11. L'utilisateur
 - /index.html : Le fichier principal contenant la structure HTML de la page
 - /style.css : Le fichier CSS pour la mise en forme et les styles
 - /script.js : Le fichier JavaScript contenant la logique du jeu
+- /images/logo.svg : Le logo utilisé dans le footer et dans l’onglet du navigateur
+- /Dockerfile : La préparation de l’image Docker avec Nginx et les fichiers du site
+- /compose.yml : La définition du conteneur et du port utilisé pour accéder au site
 
+Le jeu est un site statique : le navigateur exécute le JavaScript. Pour son hébergement sur Simple Containers (SC), le Dockerfile copie les fichiers HTML, CSS, JavaScript et les images dans une image Nginx. Nginx sert ces fichiers sur le port 80. Le fichier compose.yml permet de déployer ce conteneur avec SC.
 
 ## Fonctionnalités
 - Sélection des tables de multiplication à réviser
@@ -102,8 +106,21 @@ Annexe :
 #### Version 7
 - Remise à zéro du compteur au début du mode contrôle 
 
+#### Version 8 : Présentation et préparation de l’hébergement
+- Reprise des couleurs et des polices du portfolio
+- Ajout du footer avec le logo et les liens LinkedIn et GitHub du projet
+- Ajout d’une icône calculatrice dans le titre et du logo dans l’onglet du navigateur
+- Ajout de textes d’accompagnement pour les deux modes et pour la saisie des réponses
+- Ajout de quatre icônes selon le résultat du contrôle, avec une animation à leur apparition
+- Ajout des fichiers Docker pour préparer l’hébergement sur Simple Containers avec Nginx
+
+#### État actuel
+- Le mode entraînement permet de réessayer une question jusqu’à trouver la bonne réponse
+- Le mode contrôle comporte 20 questions, sans chronomètre, avec un compteur de bonnes réponses et un bilan final
+- Les fichiers nécessaires au déploiement sur SC sont en place ; la mise en ligne reste à vérifier
+
 #### Projets à venir
-- Affichage sur mobile (cases à cocher pas sur la même ligne que le nom de la table)
 - Choix du nombre de questions
-- Chronomètre et choix de la durée du chronomètre
-- Accessibilité
+- Chronomètre et choix de la durée du chronomètre pour le mode contrôle, le chronomètre sera facultatif, avec un temps limite pour chaque question
+- Adaptation des appréciations finales au pourcentage de réussite selon le nombre de questions choisi
+- Possibilité d’arrêter l’entraînement avec un bilan de réussite du premier coup, par exemple 25/28 : chaque question tentée sera comptée une seule fois, même après plusieurs essais
